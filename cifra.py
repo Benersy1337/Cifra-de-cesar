@@ -23,6 +23,7 @@ def Encriptar(mensagem,chave):
             # A variável recebeAlfabeto recebe o alfabeto + a chave e o resto da divisao do tamanho do alfabeto (26) que é igual a 1
             # Somamos a chave e dividimos pelo tamanho do alfabeto e pegamos o resto da divisão
             # recebeAlfabeto += alfabeto[(letra_index + chave) % 26]
+            # Quando o índice for 26 % 26, o resto é 0, 27 resto 1, 28 resto 2 e assim sucessivamente, assim voltando desde o começo do alfabeto novamente             
             recebeAlfabeto += alfabeto[(letra_index + chave) % len(alfabeto)]
             
         
