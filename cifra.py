@@ -8,17 +8,23 @@ def Encriptar(mensagem,chave):
     # Para cada letra na minha mensagem
     for letra in mensagem:
         
+        # If para poder escrever a mensagem com espaços, sem dar erro.
         if letra in alfabeto:
             # Crio uma variável que recebe o index de cada letra no alfabeto
             letra_index = alfabeto.index(letra)
+            
+            
             
             # Quem eu quero, está nesse alfabeto (alfabeto) nesse index alfabeto(letra_index) mais a chave que é o número a frente (alfabeto[letra_index + chave])
             # recebeAlfabeto += alfabeto[letra_index + chave]
             # Agora eu preciso guardar isso em uma variável, criando uma variável vazia (variavel = '')
             
             #Agora para poder retornar o vetor a 0 se for mais do que as 25 opções da variavel alfabeto, eu preciso pegar o resto da divisão de 26
-            # A variável recebeAlfabeto recebe
+            # A variável recebeAlfabeto recebe o alfabeto + a chave e o resto da divisao do tamanho do alfabeto (26) que é igual a 1
+            # Somamos a chave e dividimos pelo tamanho do alfabeto e pegamos o resto da divisão
+            # recebeAlfabeto += alfabeto[(letra_index + chave) % 26]
             recebeAlfabeto += alfabeto[(letra_index + chave) % len(alfabeto)]
+            
         
         else:
             recebeAlfabeto += letra
@@ -60,7 +66,7 @@ def main():
     print('''[ 1 ]- Para Encriptar''')
     print('''[ 2 ]- Para Descriptar''')
     
-    option = int(input(""))
+    option = int(input("Selecione a Opção:"))
     
     if option == 1:
         
